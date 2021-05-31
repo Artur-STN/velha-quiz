@@ -1,28 +1,90 @@
 var rodada = 'player_1'
 
-function notShowArticle() {
-
-    document.getElementById('article').style.display = 'none'
-
-}
-
 function insert(param) {
 
-    document.getElementById('article').style.display = 'flex'
+    var p = document.getElementById('tagP')
 
-    if (rodada == 'player_1') {
+    if (document.getElementById(param).value != '') {
 
-        document.getElementById(param).value = 'X'
+        param = ''
 
-        rodada = 'player_2'
+        if (rodada == 'player_1') {
 
-    } else if (rodada == 'player_2') {
+            rodada = 'player_2'
 
-        document.getElementById(param).value = 'O'
+            p.innerHTML = 'É a vez do O'
 
-        rodada = 'player_1'
+        } else if (rodada == 'player_2') {
+
+            rodada = 'player_1'
+
+            p.innerHTML = 'É a vez do X'
+
+        }
+
+    } else if (document.getElementById(param).value == '') {
+
+        let article = document.getElementById('article')
+
+        article.style.display = 'flex'
+
+        document.getElementById('buttonSim').addEventListener("click", function () {
+
+                valor = 'S'
+
+                article.style.display = 'none'
+
+                if (rodada == 'player_1') {
+
+                    document.getElementById(param).value = 'X'
+
+                    rodada = 'player_2'
+
+                    p.innerHTML = 'É a vez do O'
+
+                } else if (rodada == 'player_2') {
+
+                    document.getElementById(param).value = 'O'
+
+                    rodada = 'player_1'
+
+                    p.innerHTML = 'É a vez do X'
+
+                }
+
+                param = ''
+
+            }
+
+        );
+
+        document.getElementById('buttonNao').addEventListener("click", function () {
+
+                article.style.display = 'none'
+
+                param = ''
+
+                if (rodada == 'player_1') {
+
+                    rodada = 'player_2'
+
+                    p.innerHTML = 'É a vez do O'
+
+                } else if (rodada == 'player_2') {
+
+                    rodada = 'player_1'
+
+                    p.innerHTML = 'É a vez do X'
+
+                }
+
+            }
+
+        );
 
     }
+
+    console.log(rodada)
 
 }
 

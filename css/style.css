@@ -53,6 +53,35 @@ body {
 
     padding: 5rem 0;
 
+    transition: 0.2s;
+
+}
+
+header#cabecalho {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 40%;
+    left: 10px;
+
+    background: white;
+    color: #2B2D42;
+
+    font-family: 'Acme';
+    font-size: 4rem;
+    font-weight: bolder;
+
+    border-radius: 10px;
+
+    padding: 2rem 0.5rem;
+
+    transition: 0.2s;
+    
+    cursor: pointer;
+
 }
 
 section {
@@ -169,7 +198,7 @@ article header p {
     transition: 0.2s;
 
     width: 100vw;
-    
+
     padding: 2rem;
 
 }
