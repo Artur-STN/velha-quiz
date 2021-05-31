@@ -75,8 +75,10 @@ function insert(param) {
                     rodada = 'player_1'
 
                     p.innerHTML = 'É a vez do X'
-
+                    
                 }
+
+                console.log(rodada)
 
             }
 
@@ -95,6 +97,8 @@ function reset() {
         document.getElementById(`input${index}`).value = ''
 
     }
+
+    document.getElementById('tagP').innerHTML = 'É a vez do X'
 
     rodada = 'player_1'
 
