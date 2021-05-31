@@ -1,0 +1,354 @@
+@font-face {
+
+    font-family: 'Acme';
+    src: url('../fonts/Acme-Regular.ttf');
+
+}
+
+@font-face {
+
+    font-family: 'SigmarOne';
+    src: url('../fonts/SigmarOne-Regular.ttf');
+
+}
+
+@keyframes animation {
+
+    0% {
+
+        transform: rotate(5deg);
+
+    }
+
+    50% {
+
+        transform: rotate(-5deg);
+
+    }
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #2B2D42;
+
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    padding: 5rem 0;
+
+}
+
+section {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 5px;
+
+    width: 460px;
+
+}
+
+section input {
+
+    background: #8D99AE;
+    color: #EDF2F4;
+
+    border: 1px solid;
+
+    font-family: 'Acme';
+    font-size: 8rem;
+    font-weight: bolder;
+
+    text-align: center;
+    text-shadow: 0 0 5px black;
+
+    width: 150px;
+    height: 150px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+section input:hover {
+
+    background: #EF233C;
+
+    text-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+
+    transform: scale(1.1);
+
+}
+
+button.novaPartida {
+
+    background: #EF233C;
+    color: white;
+
+    font-family: 'SigmarOne';
+    font-size: 1.5rem;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    text-shadow: 0 0 5px black;
+
+    box-shadow: 0 0 5px black;
+
+    width: 250px;
+    height: 50px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+button.novaPartida:hover {
+
+    background: #D80032;
+
+    animation-name: animation;
+    animation-duration: 0.5s;
+    animation-play-state: running;
+
+    transform: scale(1.2);
+
+}
+
+article {
+
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 13rem 0;
+
+    position: fixed;
+    top: 0;
+
+}
+
+article header p {
+
+    background: white;
+
+    font-family: 'Acme';
+    font-size: 5rem;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+    width: 100vw;
+    
+    padding: 2rem;
+
+}
+
+article footer {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 460px;
+
+}
+
+article footer button {
+
+    font-family: 'SigmarOne';
+    font-size: 1.5rem;
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    text-shadow: 0 0 5px black;
+
+    box-shadow: 0 0 5px black;
+
+    padding: 0.5rem 5rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+article footer button:hover {
+
+    text-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+
+    transform: scale(1.2);
+
+}
+
+article footer button:first-child {
+
+    background: #06d656;
+    color: white;
+
+}
+
+article footer button:last-child {
+
+    background: #EF233C;
+    color: white;
+
+}
+
+article footer button:first-child:hover {
+
+    background: #04bb4a;
+
+}
+
+article footer button:last-child:hover {
+
+    background: #c90f25;
+
+}
+
+@media(max-width: 720px) {
+
+    body {
+
+        padding: 8rem 0;
+
+    }
+
+    section {
+
+        width: 310px;
+
+    }
+
+    section input {
+
+        font-size: 5rem;
+
+        width: 100px;
+        height: 100px;
+
+    }
+
+    article {
+
+        padding: 10rem;
+
+    }
+
+    article footer {
+
+        width: 430px;
+
+    }
+
+    article footer button {
+
+        width: 200px;
+
+        padding: 0.5rem 0;
+
+    }
+
+}
+
+@media(max-width: 670px) {
+
+    article header p {
+
+        font-size: 4rem;
+
+    }
+
+}
+
+@media(max-width: 510px) {
+
+    body {
+
+        padding: 11rem 0;
+
+    }
+
+    section {
+
+        width: 280px;
+
+    }
+
+    section input {
+
+        width: 90px;
+        height: 90px;
+
+    }
+
+    article header p {
+
+        font-size: 3rem;
+
+    }
+
+}
+
+@media(max-width: 510px) {
+
+    article {
+
+        padding: 12rem 0;
+
+    }
+
+    article header p {
+
+        font-size: 2rem;
+
+    }
+
+    article footer {
+
+        flex-direction: column;
+
+        height: 150px;
+
+    }
+
+    article footer button {
+
+        width: 250px;
+
+    }
+
+}
