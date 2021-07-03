@@ -1,92 +1,22 @@
-var rodada = 'player_1'
+var rodada = "X"
 
-function insert(param) {
+function insert(params) {
 
-    var p = document.getElementById('tagP')
+    let input = document.getElementById(params)
 
-    if (document.getElementById(param).value != '') {
+    input.value = rodada
 
-        param = ''
+    if (rodada == "X") {
 
-        if (rodada == 'player_1') {
+        rodada = "O"
+        document.getElementById('tagP').innerHTML = 'É a vez do O'
 
-            rodada = 'player_2'
+    } else if (rodada == "O") {
 
-            p.innerHTML = 'É a vez do O'
-
-        } else if (rodada == 'player_2') {
-
-            rodada = 'player_1'
-
-            p.innerHTML = 'É a vez do X'
-
-        }
-
-    } else if (document.getElementById(param).value == '') {
-
-        let article = document.getElementById('article')
-
-        article.style.display = 'flex'
-
-        document.getElementById('buttonSim').addEventListener("click", function () {
-
-                valor = 'S'
-
-                article.style.display = 'none'
-
-                if (rodada == 'player_1') {
-
-                    document.getElementById(param).value = 'X'
-
-                    rodada = 'player_2'
-
-                    p.innerHTML = 'É a vez do O'
-
-                } else if (rodada == 'player_2') {
-
-                    document.getElementById(param).value = 'O'
-
-                    rodada = 'player_1'
-
-                    p.innerHTML = 'É a vez do X'
-
-                }
-
-                param = ''
-
-            }
-
-        );
-
-        document.getElementById('buttonNao').addEventListener("click", function () {
-
-                article.style.display = 'none'
-
-                param = ''
-
-                if (rodada == 'player_1') {
-
-                    rodada = 'player_2'
-
-                    p.innerHTML = 'É a vez do O'
-
-                } else if (rodada == 'player_2') {
-
-                    rodada = 'player_1'
-
-                    p.innerHTML = 'É a vez do X'
-                    
-                }
-
-                console.log(rodada)
-
-            }
-
-        );
+        rodada = "X"
+        document.getElementById('tagP').innerHTML = 'É a vez do X'
 
     }
-
-    console.log(rodada)
 
 }
 
@@ -100,6 +30,22 @@ function reset() {
 
     document.getElementById('tagP').innerHTML = 'É a vez do X'
 
-    rodada = 'player_1'
+    rodada = 'X'
+
+}
+
+function bgBody(paramButton) {
+
+    let body = document.getElementById('body')
+    
+    if (paramButton == 'Sim') {
+
+        body.style.background = '#06D656'
+
+    } else if (paramButton == 'Não') {
+
+        body.style.background = '#EF233C'
+
+    }
 
 }

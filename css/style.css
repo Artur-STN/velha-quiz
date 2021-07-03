@@ -45,7 +45,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background: #2B2D42;
+    background: #8AC4FF;
 
     min-height: 100vh;
 
@@ -161,7 +161,7 @@ button.novaPartida:hover {
 
 article {
 
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
@@ -176,6 +176,9 @@ article {
 
     position: fixed;
     top: 0;
+    left: -100vw;
+
+    transition: 0.2s;
 
 }
 
@@ -235,29 +238,89 @@ article footer button:hover {
 
 }
 
-article footer button:first-child {
+article footer button#buttonSim {
 
-    background: #06d656;
+    background: #06D656;
     color: white;
 
 }
 
-article footer button:last-child {
+article footer button#buttonNao {
 
     background: #EF233C;
     color: white;
 
 }
 
-article footer button:first-child:hover {
+article footer button#buttonSim:hover {
 
-    background: #04bb4a;
+    background: #04BB4A;
 
 }
 
-article footer button:last-child:hover {
+article footer button#buttonNao:hover {
 
-    background: #c90f25;
+    background: #C90F25;
+
+}
+
+#inputCheckbox {
+
+    display: none;
+
+}
+
+.theLabel {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #EF233C;
+    color: white;
+    
+    font-size: 2rem;
+
+    border-radius: 5px;
+    border: 1px solid white;
+
+    box-shadow: 0 0 5px black;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    position: fixed;
+    top: 25px;
+    left: 48.5vw;
+
+}
+
+.theLabel:hover {
+
+    background: white;
+    color: #EF233C;
+
+    border: 1px solid #EF233C;
+
+    box-shadow: 0 0 15px black;
+    
+    transform: scale(1.2);
+
+}
+
+#inputCheckbox:checked ~ article {
+
+    left: 0;
+
+}
+
+#inputCheckbox:checked ~ label {
+
+    z-index: 1;
 
 }
 
@@ -268,6 +331,12 @@ article footer button:last-child:hover {
         flex-direction: column;
 
         padding: 2rem 0;
+
+    }
+
+    .theLabel {
+
+        position: inherit;
 
     }
 

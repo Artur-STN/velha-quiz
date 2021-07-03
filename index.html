@@ -12,6 +12,8 @@
 
         <link rel="shortcut icon" href="/imagens/favicon.png" type="image/x-icon">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
         <link rel="stylesheet" href="css/style.css">
 
         <script src="js/script.js"></script>
@@ -20,7 +22,15 @@
 
     </head>
 
-    <body>
+    <body id="body">
+
+        <input type="checkbox" id="inputCheckbox">
+
+        <label class="theLabel" for="inputCheckbox">
+
+            <i class="fas fa-bars"></i>
+
+        </label>
 
 		<header id="cabecalho">
 
@@ -54,9 +64,9 @@
 
             <footer>
             
-                <button id="buttonSim">Sim</button>
+                <button onclick="bgBody('Sim')" id="buttonSim">Sim</button>
             
-                <button id="buttonNao">Não</button>
+                <button onclick="bgBody('Não')" id="buttonNao">Não</button>
             
             </footer>
 
